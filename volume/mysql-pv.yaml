@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name:  mysql-pv
+spec:
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+    storage:  1Gi
+  persistentVolumeReclaimPolicy:  Retain
+  storageClassName: nfs
+  nfs:
+    path:  /nfs/mysql-pv
+    server:  192.168.56.105
